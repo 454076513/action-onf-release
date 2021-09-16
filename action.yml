@@ -1,0 +1,43 @@
+# action.yml
+name: 'Infinality release'
+description: 'Greet someone and record the time'
+inputs:
+  onf-workspace-id:  # id of input
+    description: 'Who to greet'
+    required: true
+  onf_access-key:  # id of input
+    description: 'Who to greet'
+    required: true
+  onf-secret-key:  # id of input
+    description: 'Who to greet'
+    required: true
+  onf-network-key:  # id of input
+    description: 'Who to greet'
+    required: true
+  onf-sub_command:  # id of input
+    description: 'Who to greet'
+    required: true
+  onf-action:  # id of input
+    description: 'Who to greet'
+    required: true
+  image-version:  # id of input
+    description: 'Who to greet'
+    required: true
+  percent:  # id of input
+    description: 'Who to greet'
+    required: false
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.onf-access-key }}
+    - ${{ inputs.onf-secret-key }}
+    - ${{ inputs.onf-workspace-id }}
+    - ${{ inputs.onf-network-key }}
+    - ${{ inputs.onf-sub_command }}
+    - ${{ inputs.onf-action }}
+    - ${{ inputs.image-version }}
+    - ${{ inputs.percent }}
