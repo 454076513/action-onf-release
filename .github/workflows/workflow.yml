@@ -14,7 +14,7 @@ jobs:
       matrix:
         go-version: [1.15.x]
         #[macos,ubuntu, windows]
-        os: [macos]
+        os: [ubuntu]
         onf-version: [v0.1.0]
     runs-on:  ${{ matrix.os }}-latest
     steps:
@@ -28,11 +28,6 @@ jobs:
       id: version
       with:
         paths: ./VERSION
-
-    - name: Set up Go 1.x
-      uses: actions/setup-go@v2
-      with:
-        go-version: ${{ matrix.go-version }}
 
     - name: read version
       uses: pCYSl5EDgo/cat@master
