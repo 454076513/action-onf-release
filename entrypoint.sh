@@ -16,7 +16,7 @@ echo "env: ${ONF_ACCESS_KEY} ${ONF_SECRET_KEY} ${ONF_WORKSPACE_ID}"
 # onf="onf"
 
 # test
-curl -s https://raw.githubusercontent.com/OnFinality-io/onf-cli/networkV2/scripts/install/install.sh | bash
+curl -s https://github.com/OnFinality-io/onf-cli/blob/feature/networkV2/scripts/install/install.sh | bash
 onf="onf"
 
 # git clone https://github.com/OnFinality-io/onf-cli.git
