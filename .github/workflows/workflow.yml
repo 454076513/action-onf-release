@@ -14,21 +14,10 @@ jobs:
       matrix:
         go-version: [1.15.x]
         #[macos,ubuntu, windows]
-        os: [ubuntu]
+        os: [macos,ubuntu, windows]
         onf-version: [v0.1.0]
     runs-on:  ${{ matrix.os }}-latest
     steps:
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 100
-
-    - name: version check
-      uses: marceloprado/has-changed-path@v1
-      id: version
-      with:
-        paths: ./VERSION
-
     - name: read version
       uses: pCYSl5EDgo/cat@master
       id: onf-version
