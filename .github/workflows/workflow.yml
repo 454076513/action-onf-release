@@ -41,7 +41,7 @@ jobs:
         path: VERSION
     
     - name: onf upgrade
-      uses: "454076513/action-onf-release@latest"
+      uses: "454076513/action-onf-release@v1"
       with:
         onf-access-key: "${{ secrets.ONF_ACCESS_KEY }}"
         onf-secret-key: "${{ secrets.ONF_SECRET_KEY }}"
