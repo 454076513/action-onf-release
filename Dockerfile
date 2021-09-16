@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM alpine:3.10
+FROM debian:bullseye-slim 
 
 RUN apt update 
 RUN apt-get -y install curl 
