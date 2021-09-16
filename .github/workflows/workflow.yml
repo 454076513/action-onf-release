@@ -42,7 +42,7 @@ jobs:
         onf-secret-key: "${{ secrets.ONF_SECRET_KEY }}"
         onf-workspace-id: "${{ secrets.ONF_WORKSPACE_ID }}"
         onf-network-key: 28501c77-e3ba-4d24-8bb8-32a00075e29d
-        onf-sub_command: node
+        onf-sub-command: node
         onf-action: upgrade
         image-version: ${{ steps.onf-version.outputs.text }}
         percent: 30
