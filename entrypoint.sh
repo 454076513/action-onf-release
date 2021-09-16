@@ -11,6 +11,7 @@ image_version=$7
 percent=$8
 echo "env: ${ONF_ACCESS_KEY} ${ONF_SECRET_KEY} ${ONF_WORKSPACE_ID}"
 
+# production
 # curl -s https://raw.githubusercontent.com/OnFinality-io/onf-cli/master/scripts/install/install.sh | bash
 # onf="onf"
 
