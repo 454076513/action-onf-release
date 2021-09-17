@@ -58,12 +58,12 @@ const fs = require('fs');
       cmd_onf = `${cmd_onf}.exe`
     }
     console.log(`Download onf command from  ${URL}. ${cmd_onf}`);
-    if(!fs.existsSync(cmd_onf)){
-      const downScript =  await tc.downloadTool(URL,cmd_onf)
-      console.log(`downScript payload: ${downScript}`);
-    }else{
+    if(fs.existsSync(cmd_onf)){
       io.rmRF(cmd_onf)
     }
+
+    const downScript =  await tc.downloadTool(URL,cmd_onf)
+    console.log(`downScript payload: ${downScript}`);
     
     if(platform != "windows"){
       await exec.exec(`chmod 773 ${cmd_onf}`);
