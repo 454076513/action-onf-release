@@ -30,14 +30,18 @@ outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.onf-access-key }}
-    - ${{ inputs.onf-secret-key }}
-    - ${{ inputs.onf-workspace-id }}
-    - ${{ inputs.onf-network-key }}
-    - ${{ inputs.onf-sub-command }}
-    - ${{ inputs.onf-action }}
-    - ${{ inputs.image-version }}
-    - ${{ inputs.percent }}
+  using: 'node12'
+  main: 'src/index.js'
+# runs:
+#   using: 'docker'
+#   image: 'Dockerfile'
+#   args:
+#     - ${{ inputs.onf-access-key }}
+#     - ${{ inputs.onf-secret-key }}
+#     - ${{ inputs.onf-workspace-id }}
+#     - ${{ inputs.onf-network-key }}
+#     - ${{ inputs.onf-sub-command }}
+#     - ${{ inputs.onf-action }}
+#     - ${{ inputs.image-version }}
+#     - ${{ inputs.percent }}
+  
