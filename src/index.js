@@ -57,8 +57,8 @@ const fs = require('fs');
     if(platform === "windows"){
       cmd_onf = `${cmd_onf}.exe`
     }
+    console.log(`Download onf command from  ${URL}`);
     if(!fs.existsSync(cmd_onf)){
-      console.log(`Download onf command from  ${URL}`);
       const downScript =  await tc.downloadTool(URL,cmd_onf)
       console.log(`downScript payload: ${downScript}`);
     }else{
