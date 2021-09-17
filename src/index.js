@@ -74,8 +74,8 @@ const fs = require('fs');
       letsubCMd  = `${letsubCMd} --percent ${percent}`
     }
 
-    // const n = await exec.exec(`./${cmd_onf}`,letsubCMd.split(" "));
-    const n = await exec.exec(`./${cmd_onf}`,["node","list"]);
+    const n = await exec.exec(`./${cmd_onf}`,letsubCMd.split(" "));
+    // const n = await exec.exec(`./${cmd_onf}`,["node","list"]);
     console.log(`Exec payload: ${n}`);
     
     
