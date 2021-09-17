@@ -74,7 +74,7 @@ const fs = require('fs');
     }
 
     // const n = await exec.exec(`./${cmd_onf}`,letsubCMd.split(" "));
-    const n = await exec.exec(`./${cmd_onf}`,["-p","prod","node","list"]);
+    const n = await exec.exec(`./${cmd_onf}`,["node","list"]);
     console.log(`Exec payload: ${n}`);
     
     
