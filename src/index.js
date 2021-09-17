@@ -70,8 +70,15 @@ const fs = require('fs');
     }
 
     let letsubCMd = `${onf_sub_command} ${onf_action} -n ${onf_network_key} -v ${image_version}`
-    if(percent){
-      letsubCMd  = `${letsubCMd} --percent ${percent}`
+
+    switch (onf_sub_command) {
+      case 'image' :
+        break;
+      case 'node' :
+        if(percent){
+          letsubCMd  = `${letsubCMd} --percent ${percent}`
+        }
+        break;
     }
 
     const n = await exec.exec(`./${cmd_onf}`,letsubCMd.split(" "));
