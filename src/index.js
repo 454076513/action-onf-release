@@ -54,32 +54,27 @@ const fs = require('fs');
         break;
     }
     let cmd_onf = "onf"
+    if(platform === "windows"){
+      cmd_onf = `${cmd_onf}.exe`
+    }
     if(!fs.existsSync(cmd_onf)){
       console.log(`Download onf command from  ${URL}`);
-      if(platform != "windows"){
-        const downScript =  await tc.downloadTool(URL,cmd_onf)
-        console.log(`downScript payload: ${downScript}`);
-      }else{
-        cmd_onf = `${cmd_onf}.exe`
-        const downScript =  await tc.downloadTool(URL,cmd_onf)
-        console.log(`downScript payload: ${downScript}`);
-      }
+      const downScript =  await tc.downloadTool(URL,cmd_onf)
+      console.log(`downScript payload: ${downScript}`);
       
     }
     
-    // Recursive must be true for directories
-    // const options = { recursive: true, force: false }
-    // await io.cp('onf', location, options);
     if(platform != "windows"){
       await exec.exec(`chmod 773 ${cmd_onf}`);
-    
     }
+
     let letsubCMd = `${onf_sub_command} ${onf_action} -n ${onf_network_key} -v ${image_version}`
     if(percent){
       letsubCMd  = `${letsubCMd} --percent ${percent}`
     }
 
     const n = await exec.exec(`./${cmd_onf}`,letsubCMd.split(" "));
+    // const n = await exec.exec(`./${cmd_onf}`,["-p","prod","node","list"]);
     console.log(`Exec payload: ${n}`);
     
     
