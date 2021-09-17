@@ -61,7 +61,8 @@ const fs = require('fs');
       console.log(`Download onf command from  ${URL}`);
       const downScript =  await tc.downloadTool(URL,cmd_onf)
       console.log(`downScript payload: ${downScript}`);
-      
+    }else{
+      io.rmRF(cmd_onf)
     }
     
     if(platform != "windows"){

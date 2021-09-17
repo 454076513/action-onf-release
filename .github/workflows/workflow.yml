@@ -29,11 +29,6 @@ jobs:
       with:
         paths: ./VERSION
 
-    - name: Set up Go 1.x
-      uses: actions/setup-go@v2
-      with:
-        go-version: ${{ matrix.go-version }}
-
     - name: read version
       uses: pCYSl5EDgo/cat@master
       id: onf-version
